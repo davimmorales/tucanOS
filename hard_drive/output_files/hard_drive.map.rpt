@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hard_drive
-Tue Oct 17 20:38:07 2017
+Wed Oct 18 20:53:20 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -13,10 +13,12 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +45,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 17 20:38:07 2017       ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 18 20:53:20 2017       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; hard_drive                                  ;
 ; Top-level Entity Name              ; harddrive                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,347                                       ;
-;     Total combinational functions  ; 2,211                                       ;
+; Total logic elements               ; 5,342                                       ;
+;     Total combinational functions  ; 2,302                                       ;
 ;     Dedicated logic registers      ; 3,136                                       ;
 ; Total registers                    ; 3136                                        ;
 ; Total pins                         ; 87                                          ;
@@ -172,17 +174,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 5,347       ;
+; Estimated Total logic elements              ; 5,342       ;
 ;                                             ;             ;
-; Total combinational functions               ; 2211        ;
+; Total combinational functions               ; 2302        ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 2192        ;
-;     -- 3 input functions                    ; 7           ;
-;     -- <=2 input functions                  ; 12          ;
+;     -- 4 input functions                    ; 2106        ;
+;     -- 3 input functions                    ; 98          ;
+;     -- <=2 input functions                  ; 98          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 2199        ;
-;     -- arithmetic mode                      ; 12          ;
+;     -- normal mode                          ; 2302        ;
+;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 3136        ;
 ;     -- Dedicated logic registers            ; 3136        ;
@@ -194,8 +196,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 3136        ;
-; Total fan-out                               ; 18339       ;
-; Average fan-out                             ; 3.32        ;
+; Total fan-out                               ; 18345       ;
+; Average fan-out                             ; 3.27        ;
 +---------------------------------------------+-------------+
 
 
@@ -204,9 +206,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |harddrive                 ; 2211 (2211)       ; 3136 (3136)  ; 0           ; 0            ; 0       ; 0         ; 87   ; 0            ; |harddrive          ; work         ;
+; |harddrive                 ; 2302 (2302)       ; 3136 (3136)  ; 0           ; 0            ; 0       ; 0         ; 87   ; 0            ; |harddrive          ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; firstClock[0..31]                      ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 32 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -219,9 +231,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3136  ;
+; Number of registers using Clock Enable       ; 3040  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 98:1               ; 32 bits   ; 2080 LEs      ; 2080 LEs             ; 0 LEs                  ; No         ; |harddrive|Mux240          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -231,18 +252,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; boundary_port         ; 87                          ;
 ; cycloneiii_ff         ; 3136                        ;
-;     ENA               ; 3136                        ;
-; cycloneiii_lcell_comb ; 2211                        ;
-;     arith             ; 12                          ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 7                           ;
-;     normal            ; 2199                        ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 6                           ;
-;         4 data inputs ; 2192                        ;
+;     ENA               ; 3040                        ;
+;     plain             ; 96                          ;
+; cycloneiii_lcell_comb ; 2302                        ;
+;     normal            ; 2302                        ;
+;         2 data inputs ; 98                          ;
+;         3 data inputs ; 98                          ;
+;         4 data inputs ; 2106                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.40                       ;
-; Average LUT depth     ; 6.57                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 6.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -251,7 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -261,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Tue Oct 17 20:37:49 2017
+    Info: Processing started: Wed Oct 18 20:52:58 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hard_drive -c hard_drive
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file harddrive.v
@@ -269,28 +288,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file harddri
 Info (12021): Found 1 design units, including 1 entities, in source file hard_drive.bdf
     Info (12023): Found entity 1: hard_drive
 Info (12127): Elaborating entity "harddrive" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "HD" is uninferred due to asynchronous read logic File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 10
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "HD" into its bus
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "track[6]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 3
-    Warning (15610): No output dependent on input pin "sector[7]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[8]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[9]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[10]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[11]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[12]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-    Warning (15610): No output dependent on input pin "sector[13]" File: /home/morales/Documentos/Git/tucanOS/hard_drive/harddrive.v Line: 4
-Info (21057): Implemented 5434 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5429 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 55 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 5347 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info (21061): Implemented 5342 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 1317 megabytes
-    Info: Processing ended: Tue Oct 17 20:38:07 2017
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:39
+    Info: Processing ended: Wed Oct 18 20:53:20 2017
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:41
 
 

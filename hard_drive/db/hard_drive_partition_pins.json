@@ -132,11 +132,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "track[4]",
+					"name" : "sector[0]",
 					"strict" : false
 				},
 				{
-					"name" : "track[3]",
+					"name" : "sector[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[3]",
+					"strict" : false
+				},
+				{
+					"name" : "track[0]",
 					"strict" : false
 				},
 				{
@@ -148,42 +160,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "track[0]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[0]",
-					"strict" : false
-				},
-				{
-					"name" : "track[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sector[6]",
-					"strict" : false
-				},
-				{
 					"name" : "data_write[0]",
 					"strict" : false
 				},
@@ -192,7 +168,63 @@
 					"strict" : false
 				},
 				{
+					"name" : "track[3]",
+					"strict" : false
+				},
+				{
+					"name" : "track[4]",
+					"strict" : false
+				},
+				{
+					"name" : "track[5]",
+					"strict" : false
+				},
+				{
+					"name" : "track[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[11]",
+					"strict" : false
+				},
+				{
 					"name" : "flag_write_hd",
+					"strict" : false
+				},
+				{
+					"name" : "sector[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sector[13]",
 					"strict" : false
 				},
 				{

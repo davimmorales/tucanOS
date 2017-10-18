@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 d/home/morales/Documentos/Git/tucanOS/hard_drive/simulation/qsim
 vharddrive
-Z1 !s110 1508288166
+Z1 !s110 1508368465
 !i10b 1
-!s100 b1jKhYDHz0Pi^b<DAlARE3
-Ie=:0Y0>`kHocS9a8;gJ_<3
+!s100 nT;:^6@AmZ[c[LB^6amEO0
+I`aCQmGf:UC<gzdCC?Hdm;2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1508288165
+w1508368461
 8hard_drive.vo
 Fhard_drive.vo
 L0 32
@@ -23,19 +23,19 @@ Z3 OV;L;10.4b;61
 r1
 !s85 0
 31
-Z4 !s108 1508288166.000000
+!s108 1508368464.000000
 !s107 hard_drive.vo|
 !s90 -work|work|hard_drive.vo|
 !i113 1
-Z5 o-work work
+Z4 o-work work
 vharddrive_vlg_vec_tst
 R1
 !i10b 1
-!s100 MhK883AS?JP97QjO2>>6g0
-IzPCVkzIDXU7Hjz8WJQnM]1
+!s100 UDnHOOJ@I1SX_14PKP6?U0
+I6dTaV8ibQ]O>V_J^>BlcE3
 R2
 R0
-w1508288158
+w1508368454
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 L0 30
@@ -43,8 +43,8 @@ R3
 r1
 !s85 0
 31
-R4
+!s108 1508368465.000000
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R5
+R4
