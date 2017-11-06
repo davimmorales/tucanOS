@@ -1,0 +1,29 @@
+no operation
+input menu 0 entry
+  compare menu 0 entry
+    ---
+    ---
+    ---
+    ---
+0: output location [0]
+  compare menu 0 entry
+    ---
+    ---
+    ---
+    ---
+1: output location [1]
+  ---
+  compare menu 0 entry
+    ---
+    ---
+    ---
+    ---
+2: output location [2]
+  ---
+  compare menu 0 entry [3]
+    ---
+    ---
+    ---
+    ---
+3: output location [3]
+  ---

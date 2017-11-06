@@ -1,0 +1,213 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition"
+
+// DATE "11/03/2017 17:26:07"
+
+// 
+// Device: Altera EP4CE115F29C7 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module os_control_unit (
+	CLOCK,
+	BIOS_INSTRUCTION_OPCODE,
+	instruction_selection);
+input 	CLOCK;
+input 	[5:0] BIOS_INSTRUCTION_OPCODE;
+output 	instruction_selection;
+
+// Design Ports Information
+// instruction_selection	=>  Location: PIN_C2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[0]	=>  Location: PIN_F5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[1]	=>  Location: PIN_G6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[2]	=>  Location: PIN_E3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[3]	=>  Location: PIN_F3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[5]	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BIOS_INSTRUCTION_OPCODE[4]	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CLOCK	=>  Location: PIN_H7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \instruction_selection~output_o ;
+wire \CLOCK~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[5]~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[4]~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[2]~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[3]~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[0]~input_o ;
+wire \BIOS_INSTRUCTION_OPCODE[1]~input_o ;
+wire \Equal0~0_combout ;
+wire \CONTROL_STATE~0_combout ;
+wire \CONTROL_STATE~q ;
+
+
+// Location: IOOBUF_X0_Y69_N9
+cycloneive_io_obuf \instruction_selection~output (
+	.i(\CONTROL_STATE~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\instruction_selection~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \instruction_selection~output .bus_hold = "false";
+defparam \instruction_selection~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y68_N15
+cycloneive_io_ibuf \CLOCK~input (
+	.i(CLOCK),
+	.ibar(gnd),
+	.o(\CLOCK~input_o ));
+// synopsys translate_off
+defparam \CLOCK~input .bus_hold = "false";
+defparam \CLOCK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y68_N1
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[5]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[5]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[5]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[5]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y68_N8
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[4]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[4]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[4]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[4]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y66_N15
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[2]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[2]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[2]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[2]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y66_N22
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[3]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[3]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[3]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[3]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y65_N15
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[0]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[0]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[0]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[0]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y67_N15
+cycloneive_io_ibuf \BIOS_INSTRUCTION_OPCODE[1]~input (
+	.i(BIOS_INSTRUCTION_OPCODE[1]),
+	.ibar(gnd),
+	.o(\BIOS_INSTRUCTION_OPCODE[1]~input_o ));
+// synopsys translate_off
+defparam \BIOS_INSTRUCTION_OPCODE[1]~input .bus_hold = "false";
+defparam \BIOS_INSTRUCTION_OPCODE[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y66_N16
+cycloneive_lcell_comb \Equal0~0 (
+// Equation(s):
+// \Equal0~0_combout  = (\BIOS_INSTRUCTION_OPCODE[2]~input_o  & (!\BIOS_INSTRUCTION_OPCODE[3]~input_o  & (\BIOS_INSTRUCTION_OPCODE[0]~input_o  & \BIOS_INSTRUCTION_OPCODE[1]~input_o )))
+
+	.dataa(\BIOS_INSTRUCTION_OPCODE[2]~input_o ),
+	.datab(\BIOS_INSTRUCTION_OPCODE[3]~input_o ),
+	.datac(\BIOS_INSTRUCTION_OPCODE[0]~input_o ),
+	.datad(\BIOS_INSTRUCTION_OPCODE[1]~input_o ),
+	.cin(gnd),
+	.combout(\Equal0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Equal0~0 .lut_mask = 16'h2000;
+defparam \Equal0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X1_Y68_N0
+cycloneive_lcell_comb \CONTROL_STATE~0 (
+// Equation(s):
+// \CONTROL_STATE~0_combout  = (\CONTROL_STATE~q ) # ((\BIOS_INSTRUCTION_OPCODE[5]~input_o  & (!\BIOS_INSTRUCTION_OPCODE[4]~input_o  & \Equal0~0_combout )))
+
+	.dataa(\BIOS_INSTRUCTION_OPCODE[5]~input_o ),
+	.datab(\BIOS_INSTRUCTION_OPCODE[4]~input_o ),
+	.datac(\CONTROL_STATE~q ),
+	.datad(\Equal0~0_combout ),
+	.cin(gnd),
+	.combout(\CONTROL_STATE~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \CONTROL_STATE~0 .lut_mask = 16'hF2F0;
+defparam \CONTROL_STATE~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X1_Y68_N1
+dffeas CONTROL_STATE(
+	.clk(\CLOCK~input_o ),
+	.d(\CONTROL_STATE~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\CONTROL_STATE~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam CONTROL_STATE.is_wysiwyg = "true";
+defparam CONTROL_STATE.power_up = "low";
+// synopsys translate_on
+
+assign instruction_selection = \instruction_selection~output_o ;
+
+endmodule

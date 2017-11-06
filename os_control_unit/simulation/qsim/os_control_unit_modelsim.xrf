@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, /home/morales/Documentos/Git/tucanOS/os_control_unit/os_control_unit.v
+source_file = 1, /home/morales/Documentos/Git/tucanOS/os_control_unit/Waveform.vwf
+source_file = 1, /home/morales/Documentos/Git/tucanOS/os_control_unit/db/os_control_unit.cbx.xml
+design_name = os_control_unit
+instance = comp, \instruction_selection~output , instruction_selection~output, os_control_unit, 1
+instance = comp, \CLOCK~input , CLOCK~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[5]~input , BIOS_INSTRUCTION_OPCODE[5]~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[4]~input , BIOS_INSTRUCTION_OPCODE[4]~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[2]~input , BIOS_INSTRUCTION_OPCODE[2]~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[3]~input , BIOS_INSTRUCTION_OPCODE[3]~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[0]~input , BIOS_INSTRUCTION_OPCODE[0]~input, os_control_unit, 1
+instance = comp, \BIOS_INSTRUCTION_OPCODE[1]~input , BIOS_INSTRUCTION_OPCODE[1]~input, os_control_unit, 1
+instance = comp, \Equal0~0 , Equal0~0, os_control_unit, 1
+instance = comp, \CONTROL_STATE~0 , CONTROL_STATE~0, os_control_unit, 1

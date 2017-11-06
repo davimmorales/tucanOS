@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at os_control_unit.v(14): always construct contains both blocking and non-blocking assignments File: /home/morales/Documentos/Git/tucanOS/os_control_unit/os_control_unit.v Line: 14

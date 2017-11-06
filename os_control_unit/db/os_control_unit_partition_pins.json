@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "instruction_selection",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BIOS_INSTRUCTION_OPCODE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
