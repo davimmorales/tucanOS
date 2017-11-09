@@ -1,29 +1,39 @@
-no operation
-input menu 0 entry
-  compare menu 0 entry
+---
+menu 0: input: (menu_0_entry)
+  compare: (menu_0_entry) == 0
     ---
     ---
     ---
     ---
-0: output location [0]
-  compare menu 0 entry
-    ---
-    ---
-    ---
-    ---
-1: output location [1]
+    branch: where_am_i_0 [line 28]
+  compare: (menu_0_entry) == 1
+      ---
+      ---
+      ---
+      ---
+      branch: list_running_processes [line 31]
+    compare: (menu_0_entry) == 2
+      ---
+      ---
+      ---
+      ---
+      branch: command_prompt [line 34?]
+    compare: (menu_0_entry) == 3
+      ---
+      ---
+      ---
+      ---
+      branch: kill_process [line 37?]
+     jump: select_running_process [line 40?]
+function: where_am_i_0
   ---
-  compare menu 0 entry
-    ---
-    ---
-    ---
-    ---
-2: output location [2]
+  jump: menu_0 [line 1]
+function: list_running_processess
   ---
-  compare menu 0 entry [3]
-    ---
-    ---
-    ---
-    ---
-3: output location [3]
+  jump: menu_0 [line 1]
+function: command_prompt
   ---
+  jump: menu_0 [line 1]
+function: kill_process
+  ---
+  jump: menu_0 [line 1]

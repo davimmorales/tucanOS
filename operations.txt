@@ -1,0 +1,11 @@
+[EQUAL]
+input 21 0 0 0
+loadi 22 0 0 0
+setlt 21 22 23 0
+setlt 22 21 24 0
+or 23 24 23 0
+not 23 0 23 0
+
+[IF FALSE THEN BRANCH]
+pbranch 23 0 0 0
+branchz 0 0 0 2
