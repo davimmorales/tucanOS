@@ -1,24 +1,24 @@
 ---
-menu 0: input: (menu_0_entry)
-  compare: (menu_0_entry) == 0
+menu 0: input: (menu_0_option)
+  compare: (menu_0_option) == 0
     ---
     ---
     ---
     ---
     branch: where_am_i_0 [line 28]
-  compare: (menu_0_entry) == 1
+  compare: (menu_0_option) == 1
       ---
       ---
       ---
       ---
       branch: list_running_processes [line 31]
-    compare: (menu_0_entry) == 2
+    compare: (menu_0_option) == 2
       ---
       ---
       ---
       ---
-      branch: command_prompt [line 34?]
-    compare: (menu_0_entry) == 3
+      branch: command_prompt [line 44]
+    compare: (menu_0_option) == 3
       ---
       ---
       ---
@@ -32,7 +32,7 @@ function: list_running_processess
   compare: (running_processes[i]==0)
     ---
     ---
-    --- 704
+    ---
     ---
     ---
     ---
@@ -42,8 +42,38 @@ function: list_running_processess
       i = i + 1;
       jump: compare: (running_processes[i]==0) [line 33]
 function: command_prompt
+  --menu 1: input: (menu_1_option)
+    --compare: (menu_1_option) == 0
+      ---
+      ---
+      ---
+      branch: where_am_i_1 [line 64]
+    compare: (menu_1_option) == 1
+      ---
+      ---
+      ---
+      ---
+      branch: list_files [line 68]
+    compare: (menu_1_option) == 2
+      ---
+      ---
+      ---
+      ---
+      branch: previous_menu_1 [line 67]
+      jump: select_file [line 71?]
+function: where_am_i_1
+  ---
+  jump: menu_1 [line 44]
+function: previous_menu_1 jump: menu_0 [line 1]
+function: list_files
+  ---
+  jump: menu_1 [line 44]
+function: select_file
+  ---
+  ---
+function: kill_process
   ---
   jump: menu_0 [line 1]
-function: kill_process
+function: select_file
   ---
   jump: menu_0 [line 1]
