@@ -29,8 +29,18 @@ function: where_am_i_0
   ---
   jump: menu_0 [line 1]
 function: list_running_processess
-  ---
-  jump: menu_0 [line 1]
+  compare: (running_processes[i]==0)
+    ---
+    ---
+    --- 704
+    ---
+    ---
+    ---
+    ---
+    true: jump menu_0 [line 1]
+    false: output running_processess[i]
+      i = i + 1;
+      jump: compare: (running_processes[i]==0) [line 33]
 function: command_prompt
   ---
   jump: menu_0 [line 1]
