@@ -66,8 +66,25 @@ function: where_am_i_1
   jump: menu_1 [line 44]
 function: previous_menu_1 jump: menu_0 [line 1]
 function: list_files
+  compare: (files[i])==0
   ---
-  jump: menu_1 [line 44]
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  true: jump menu_1 [line 44]
+  false: compare: (files[i]) == 1
+    ---
+    ---
+    ---
+    ---
+    ---
+    false: output files[i]
+    true:     
+      i = i+1
+      jump list_files [line 70]
 function: select_file
   ---
   ---
