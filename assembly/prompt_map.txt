@@ -60,7 +60,7 @@ function: command_prompt
       ---
       ---
       branch: previous_menu_1 [line 67]
-      jump: select_file [line 71?]
+      jump: compare: (menu_1_option) == 3 [line 88]
 function: where_am_i_1
   ---
   jump: menu_1 [line 44]
@@ -82,15 +82,25 @@ function: list_files
     ---
     ---
     false: output files[i]
-    true:     
+    true:
       i = i+1
       jump list_files [line 70]
+      compare: (menu_1_option) == 3
+        ---
+        ---
+        ---
+        ---
+        true: branch: create_file [line 67?]
+false: function: select_file
+---  routine: verify_if_running
+
+
 function: select_file
   ---
   ---
 function: kill_process
   ---
   jump: menu_0 [line 1]
-function: select_file
+function: select_process
   ---
   jump: menu_0 [line 1]
