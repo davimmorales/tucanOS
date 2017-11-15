@@ -90,7 +90,7 @@ function: list_files
         ---
         ---
         ---
-        true: branch: create_file [line 67?]
+        true: branch: create_file [line 0?]
 false: function: select_file
 ---  routine: verify_if_running
     compare: (menu_1_option) == 0
@@ -109,10 +109,42 @@ false: function: select_file
         ---
         ---
     routine: verify_if_exists
-
-function: select_file
-  ---
-  ---
+    compare: hd[1][i] == 0
+      ---
+      ---
+      ---
+      ---
+      ---
+      true: jump menu_1 [line 44]
+      ---
+      false: compare: hd[1][i] == menu_1_option
+        ---
+        ---
+        ---
+        true: branch [line 127]
+        false: i = i + 1; jump: verify_if_exists [line 111]
+          ---
+  variable: file_selected memory[0?]
+  input: (select_file_menu_option)
+    compare: (select_file_menu_option) == 0
+      ---
+      ---
+      ---
+      ---
+      ---
+      true: function: where_am_i_file
+        variable (file_selected memory)
+        ---
+        jump: select_file_menu_option [line 128]
+      false: compare: (select_file_menu_option) == 2
+        ---
+        ---
+        ---
+        ---
+        ---
+        ---
+        true: jump: menu_1 [line 44]
+        false:
 function: kill_process
   ---
   jump: menu_0 [line 1]
