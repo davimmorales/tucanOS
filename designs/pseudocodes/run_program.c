@@ -49,6 +49,7 @@ function verify_RAM_for_running_process{
   if (memory_position>2) {
     place = 1;
   }
+  return place;
 }
 
 function update_index_process_RAM{
@@ -82,5 +83,13 @@ function update_index_process_HD{
     i++;
   }
   index_process = i;
+}
 
+function int main() {
+  place = verify_RAM_for_running_process();
+  if (place==0) {//there is still space in RAM
+    update_index_process_RAM();
+  }else{//there is only space in HD
+    update_index_process_HD();
+  }
 }
