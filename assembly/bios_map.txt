@@ -1,0 +1,31 @@
+---
+display_bios
+  ---
+test_IO
+  ---
+  ---
+  test_memory
+    ---
+    ---
+transfer_os
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+output start_os
+  ---
+initialize_used_registers
+  ---
+  ---
+  ---
+  ---
+  ---
+start_system
