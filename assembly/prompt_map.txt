@@ -144,7 +144,54 @@ false: function: select_file
         ---
         ---
         true: jump: menu_1 [line 44]
-        false:
+        false: function: is_list_running_empty
+  ---
+  ---
+  place = 0;
+  memory_position = 0;
+  i = 0;
+    while (list_running_processes[i]!=0) {//not end of list
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      while (list_running_processes[i]!=1) {//not empty space
+        ---
+        ---
+        ---
+        ---
+        ---
+        ---
+        if (list_running_processes[i].place==place) {//if it is in memory
+          ---
+          ---
+          ---
+          ---
+          ---
+          ---
+          ---
+          ---
+            memory_position++;
+            ---
+            }
+          i++;
+          }
+          (back to first while)}
+    if (memory_position>2) {
+      ---
+      ---
+      ---
+      ---
+      place = 1;
+        ---
+        }
+      return place;
+      ---
+      jump:  run_process [line 194]
+      ends: 240
 function: kill_process
   ---
   jump: menu_0 [line 1]

@@ -6,19 +6,19 @@ variables:
   id;
 
 structures:
-  running_process{
+  type_running_process{
     id;
     place;
   }
 
-  program_info{
+  type_program_info{
 
   }
 ---------------------------------------------------------------------
 
 lists:
   list_running_processes{
-    running_process;
+    type_running_process;
     size = 16;
   }
 
@@ -27,14 +27,14 @@ lists:
     size = 16;
   }
 
-  list_programs{
-    program_info;
+  list_programs_info{
+    type_program_info;
     size = 16;
   }
 
 ---------------------------------------------------------------------
 
-function verify_RAM_for_running_process{
+function is_list_running_empty{
   place = 0;
   memory_position = 0;
   i = 0;
@@ -71,9 +71,9 @@ function update_index_process_HD{
   i = 0;
   index_process = 0;
 
-  while (list_programs[i]!=0) {//not end of list
-    if (list_programs[i].place==1) {//it's in HD
-      list_hd_state[list_programs[i].index_process] = 1;
+  while (list_programs_info[i]!=0) {//not end of list
+    if (list_programs_info[i].place==1) {//it's in HD
+      list_hd_state[list_programs_info[i].index_process] = 1;
     }
     i++;
   }
@@ -85,8 +85,23 @@ function update_index_process_HD{
   index_process = i;
 }
 
+function update_program_info(id, index_process, place, state, program_counter){
+	i = 0;
+	while(list_programs_info[i]!=0){
+		if(list_programs_info[i].id == id){
+			list_programs_info[i].index_process = index_process;
+      list_programs_info[i].place = place;
+      list_programs_info[i].state = state;
+      list_programs_info[i].program_counter = program_counter;
+    }
+    i++;
+  }
+}
+
+
+
 function int main() {
-  place = verify_RAM_for_running_process();
+  place = is_list_running_empty();
   if (place==0) {//there is still space in RAM
     update_index_process_RAM();
   }else{//there is only space in HD
