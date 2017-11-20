@@ -98,6 +98,27 @@ function update_program_info(id, index_process, place, state, program_counter){
   }
 }
 
+function insert_list_running(id, place){
+	i = 0;//position to insert
+	while(list_running[i].id!=0){
+		if(list.running[i].id==1){
+			break;
+		}
+		i++;
+	}
+	
+	list_running[i].id = id;
+	list_running[i].place = place;
+}
+
+function transfer_hd_to_ram(index_hd){
+	i = 0;
+	index = index_hd*64;
+	while(list_programs[index+i] !=0){
+		instructions_memory[i] = list_programs[index+i];
+		i++;
+	}		
+}
 
 
 function int main() {

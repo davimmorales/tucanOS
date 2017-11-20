@@ -190,8 +190,86 @@ false: function: select_file
         }
       return place;
       ---
-      jump:  run_process [line 194]
+      jump:  run_process [line 195]
       ends: 240
+---
+---
+load return [line 239]
+update_program_info.id = selected_file
+---
+update_program_info.index_process = 0
+update_program_info.place = 0
+update_program_info.state = 1
+---
+update_program_info.program_counter = 0
+call update_program_info;
+function update_program_info
+  i = 0;
+  ---
+  	while(list_programs_info[i]!=0){
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      		if(list_programs_info[i].id == id){
+            ---
+            ---
+            ---
+            ---
+            ---
+            ---
+            list_programs_info[i].index_process = index_process;
+            list_programs_info[i].place = place;
+            list_programs_info[i].state = state;
+            list_programs_info[i].program_counter = program_counter;
+            ---
+            ---
+            ---
+            ---
+            ---
+            ---
+            ---
+            ---
+            }
+          i++;
+          }
+          ---
+          return from update_program_info
+load return [line 271]
+insert_list_running.id = selected_file
+---
+insert_list_running.place = 0//memory
+call insert_list_running
+function: insert_list_running
+  i = 0
+  while(list_running[i].id!=0){
+    ---
+    ---
+    ---
+    ---
+    ---
+		if(list.running[i].id==1){
+      ---
+      ---
+      ---
+      break
+    }
+    i++;
+    ---
+    ---
+    ---
+  list_running[i].id = id;
+  ---
+  ---
+  list_running[i].place = place;
+  ---
+  ---
+  return from insert_list_running
+
+function: update_program_info
 function: kill_process
   ---
   jump: menu_0 [line 1]
