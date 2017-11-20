@@ -268,7 +268,61 @@ function: insert_list_running
   ---
   ---
   return from insert_list_running
-
+get_index_id.id = selected_file
+---
+load return [line 300]
+function get_index_hd(id){
+	i = 0;
+	while(list_programs_info[i]!=0){
+		if(list_programs_info[i].id == id){
+			index_hd = list_programs_info.index_hd;
+			break;
+		}
+		i++;
+	}
+	return index_hd;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+transfer_hd_to_iram.index_hd = get_index_hd.index_hd
+---
+call transfer_hd_to_iram
+function transfer_hd_to_iram(index_hd){
+	i = 0;
+	index = index_hd*64;
+	while(list_programs[index+i] !=0){
+		instructions_memory[i] = list_programs[index+i];
+		i++;
+	}
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
 function: update_program_info
 function: kill_process
   ---
