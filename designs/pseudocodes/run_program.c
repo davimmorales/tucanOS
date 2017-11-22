@@ -34,12 +34,12 @@ lists:
 
 ---------------------------------------------------------------------
 
-function is_list_running_empty{
+function is_list_running_available{
   place = 0;
   memory_position = 0;
   i = 0;
   while (list_running_processes[i]!=0) {//not end of list
-    while (list_running_processes[i]!=1) {//not empty space
+    while (list_running_processes[i]!=1) {//not available space
       if (list_running_processes[i].place==place) {//if it is in memory
         memory_position++;
       }
@@ -111,6 +111,14 @@ function insert_list_running(id, place){
 	list_running[i].place = place;
 }
 
+function is_list_running_empty(){
+	i = 0;
+	while(list_running[i] !=0){
+		i++;
+	}
+	return i;
+}
+
 function get_index_hd(id){
 	i = 0;
 	while(list_programs_info[i]!=0){
@@ -134,7 +142,7 @@ function transfer_hd_to_iram(index_hd){
 
 
 function int main() {
-  place = is_list_running_empty();
+  place = is_list_running_available();
   if (place==0) {//there is still space in RAM
     update_index_process_RAM();
   }else{//there is only space in HD

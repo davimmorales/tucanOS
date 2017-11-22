@@ -144,7 +144,7 @@ false: function: select_file
         ---
         ---
         true: jump: menu_1 [line 44]
-        false: function: is_list_running_empty
+        false: function: is_list_running_available
   ---
   ---
   place = 0;
