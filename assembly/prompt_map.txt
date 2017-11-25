@@ -144,7 +144,7 @@ false: function: select_file
         ---
         ---
         true: jump: menu_1 [line 44]
-        false: function: is_list_running_available
+        false: jump verify_if_1
   ---
   ---
   place = 0;
@@ -321,8 +321,76 @@ function transfer_hd_to_iram(index_hd){
   ---
   ---
   ---
-  ---
+  return from transfer_hd_to_iram
 }
+PC = 0
+load return [line 343]
+call is_list_running_empty
+function is_list_running_empty(){
+	i = 0;
+	while(list_running[i] !=0){
+		i++;
+	}
+	return i;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  return from is_list_running_empty
+}
+if(is_list_running_empty==0)
+  jump [line 196]
+else
+  list_running_not_empty [line ?]
+  ---
+  ---
+  ---
+  ---
+compare: (select_file_menu_option) == 1
+  true: call is_list_running_empty [line 327]
+  false:
+  ---
+  ---
+  ---
+  ---
+  ---
+  compare: (select_file_menu_option) == 3
+    true: call rename_file [line ?]
+    false:
+    ---
+    ---
+    ---
+    compare: (select_file_menu_option) == 4
+      true: call delete_file [line ?]
+      false:
+      ---
+      ---
+      ---
+      compare: (select_file_menu_option) == 5
+        true: call edit_file [line ?]
+        false:
+        ---
+        ---
+        ---
+
+
+
+compare: (select_file_menu_option) == 0
+  ---
+  ---
+  ---
+  ---
+  ---
+  true: function: where_am_i_file
+    variable (file_selected memory)
+    ---
+    jump: select_file_menu_option [line 128]
+  false: compare: (select_file_m
+
+
+
 function: update_program_info
 function: kill_process
   ---
