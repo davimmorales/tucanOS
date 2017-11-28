@@ -145,10 +145,10 @@ false: function: select_file
         ---
         true: jump: menu_1 [line 44]
         false: jump verify_if_1
-  ---
-  ---
-  place = 0;
-  memory_position = 0;
+load return [line 582]
+---
+  function is_list_running_available;
+  place = 0; memory_position = 0;
   i = 0;
     while (list_running_processes[i]!=0) {//not end of list
       ---
@@ -158,7 +158,7 @@ false: function: select_file
       ---
       ---
       ---
-      while (list_running_processes[i]!=1) {//not empty space
+      if (list_running_processes[i]!=1) {//not empty space
         ---
         ---
         ---
@@ -343,7 +343,7 @@ function is_list_running_empty(){
 if(is_list_running_empty==0)
   jump [line 196]
 else
-  list_running_not_empty [line ?]
+  jump [line 377]
   ---
   ---
   ---
@@ -374,20 +374,47 @@ compare: (select_file_menu_option) == 1
         ---
         ---
         ---
-
-
-
-compare: (select_file_menu_option) == 0
+load return [line 379]
+call is_list_running_available
+compare: (is_list_running_available) == 0
+  false: update_index_process_HD
+  true:
   ---
   ---
   ---
   ---
   ---
-  true: function: where_am_i_file
-    variable (file_selected memory)
+  load return [line 417]
+  function get_running_process{
+    i = 0;
+    running_process = 0;
+    while(list_programs_info[i]!=0){
+      if(list_programs_info[i].index_process==0){
+        running_process = list_programs_info[i].id;
+        break;
+      }
+      i++;
+    }
     ---
-    jump: select_file_menu_option [line 128]
-  false: compare: (select_file_m
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    return running_process;
+  }
+  
 
 
 

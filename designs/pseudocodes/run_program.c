@@ -39,12 +39,12 @@ function is_list_running_available{
   memory_position = 0;
   i = 0;
   while (list_running_processes[i]!=0) {//not end of list
-    while (list_running_processes[i]!=1) {//not available space
+    if (list_running_processes[i].id!=1) {//not available space
       if (list_running_processes[i].place==place) {//if it is in memory
         memory_position++;
       }
-      i++;
     }
+    i++;
   }
   if (memory_position>2) {
     place = 1;
@@ -52,19 +52,40 @@ function is_list_running_available{
   return place;
 }
 
-function update_index_process_RAM{
+function get_index_process_RAM{
   index_process = 1;//second data memory position
+  other_process_id;
   i = 0;
   while (list_running_processes[i]!=0) {//not end of list
       if (list_running_processes[i].place==0) {//data memory
         if (list_running_processes[i].id!=id) {//not the program we are moving
-          if (list_running_processes[i].index_process==1) {//second position is taken
-            index_process = 2;//put into third position
-          }
+          other_process_id = list_running_processes[i].id;
+          break;
         }
       }
       i++;
   }
+  i = 0
+  while (list_programs_info[i].id!=other_process_id) {
+    i++;
+  }
+  if (list_programs_info[i].index_process==1) {//second position is taken
+    index_process = 2;//put into third position
+  }
+  return index_process;
+}
+
+function get_running_process{
+  i = 0;
+  running_process = 0;
+  while(list_programs_info[i]!=0){
+    if(list_programs_info[i].index_process==0){
+      running_process = list_programs_info[i].id;
+      break;
+    }
+    i++;
+  }
+  return running_process;
 }
 
 function update_index_process_HD{
@@ -106,7 +127,7 @@ function insert_list_running(id, place){
 		}
 		i++;
 	}
-	
+
 	list_running[i].id = id;
 	list_running[i].place = place;
 }
@@ -137,7 +158,7 @@ function transfer_hd_to_iram(index_hd){
 	while(list_programs[index+i] !=0){
 		instructions_memory[i] = list_programs[index+i];
 		i++;
-	}		
+	}
 }
 
 
