@@ -329,7 +329,7 @@ call is_list_running_empty
 function is_list_running_empty(){
 	i = 0;
 	while(list_running[i] !=0){
-		i++;
+		if(list_running[i]!=1) i++;
 	}
 	return i;
   ---
@@ -414,7 +414,7 @@ compare: (is_list_running_available) == 0
     ---
     return running_process;
   }
-  
+
 
 
 
