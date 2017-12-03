@@ -23,4 +23,5 @@ load 23 0 0 5
 store_i_ram 23 0 22 0
 addi 23 0 23 1
 store 23 0 0 5
-jump 0 0 0 12
+jump 0 0 0 27
+jump 0 0 0 0

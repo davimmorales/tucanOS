@@ -177,8 +177,8 @@ load return [line 582]
             memory_position++;
             ---
             }
-          i++;
           }
+          i++;
           (back to first while)}
     if (memory_position>2) {
       ---
