@@ -194,7 +194,7 @@ load return [line 582]
       ends: 240
 ---
 ---
-load return [line 239]
+load return [line 241]
 update_program_info.id = selected_file
 ---
 update_program_info.index_process = 0
@@ -225,7 +225,7 @@ function update_program_info
             list_programs_info[i].place = place;
             list_programs_info[i].state = state;
             list_programs_info[i].program_counter = program_counter;
-            ---
+            break;
             ---
             ---
             ---
@@ -329,7 +329,7 @@ call is_list_running_empty
 function is_list_running_empty(){
 	i = 0;
 	while(list_running[i] !=0){
-		if(list_running[i]!=1) i++;
+		if(list_running[i]!=1) i=1;
 	}
 	return i;
   ---

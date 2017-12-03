@@ -1,0 +1,13 @@
+loadi 21 0 0 192
+loadi 22 0 0 1
+loadr 21 0 24 0
+setlt 22 24 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 2
+addi 21 0 21 2
+jump 0 0 0 7
+load 22 0 0 235
+load 23 0 0 236
+storer 21 0 22 0
+addi 21 0 21 1
+storer 21 0 23 0
