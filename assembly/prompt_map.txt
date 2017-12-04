@@ -389,13 +389,13 @@ compare: (is_list_running_available) == 0
     i = 0;
     running_process = 0;
     while(list_programs_info[i]!=0){
+      if(list_programs_info[i]!=1); info.state == 1
       if(list_programs_info[i].index_process==0){
         running_process = list_programs_info[i].id;
         break;
       }
       i++;
     }
-    ---
     ---
     ---
     ---
