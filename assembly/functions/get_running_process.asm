@@ -37,10 +37,10 @@ pbranch 23 0 0 0
 branchz 0 0 0 4
 load 21 0 0 4
 load_hd 21 0 22 0
-store 22 0 0 5
+output 22 0 0 0
 jump 0 0 0 44
 load 21 0 0 4
 addi 21 0 21 12
 jump 0 0 0 4
 load 21 0 0 5
-output 5 0 0 0
+output 21 0 0 0
