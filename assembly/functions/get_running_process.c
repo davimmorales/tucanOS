@@ -1,16 +1,15 @@
-function get_memory_position_available(){
+function get_running_process(){
   int i = 0;
-  int position;
+  int running_process;
   while(list_programs_info[i]!=0){
-    if(list_programs_info[i].place==0){
-      if(list_programs_info[i].index_process==1){
-        position = 2;
-        break;
-      }else{
-        position = 1;
-        break;
+    if(list_programs_info[i]!=1){
+      if (list_programs_info[i].index_process==0) {
+        if (list_programs_info[i].state==1) {
+          running_process = list_programs_info[i].id;
+        }
       }
     }
-          i++;
-    return position;
+    i++;
   }
+  return running_process;
+}

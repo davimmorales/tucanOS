@@ -2,7 +2,7 @@ noo 0 0 0 0
 loadi 0 0 0 0
 loadi_hd 21 1 0 0
 store 21 0 0 4
-load 21 0 0 4
+output 21 0 0 0
 load_hd 21 0 22 0
 setlt 22 0 23 0
 setlt 0 22 24 0
@@ -34,6 +34,6 @@ store 21 0 0 5
 jump 0 0 0 37
 load 21 0 0 4
 addi 21 0 21 12
-jump 0 0 0 3
+jump 0 0 0 4
 load 3 0 0 5
 output 3 0 0 0

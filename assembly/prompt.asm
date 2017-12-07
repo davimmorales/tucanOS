@@ -384,8 +384,7 @@ noo 0 0 0 0
 pbranch 22 0 0 0
 branchz 0 0 0 1
 jump 0 0 0 hd?
-loadi 27 0 0 672
-noo 0 0 0 0
+loadi 27 0 0 678
 loadi_hd 21 1 0 0
 store 21 0 0 246
 load 21 0 0 246
@@ -394,41 +393,36 @@ setlt 22 0 23 0
 setlt 0 22 24 0
 or 23 24 23 0
 pbranch 23 0 0 0
-branchz 0 0 0 17
-load 21 0 0 246
+branchz 0 0 0 25
+loadi 24 0 0 1
+setlt 22 24 25 0
+setlt 24 22 24 0
+or 24 25 24 0
+pbranch 24 0 0 0
+branchz 0 0 0 16
 addi 21 0 21 1
-load_hd 21 0 22 0
-setlt 22 0 23 0
-setlt 0 22 24 0
-or 23 24 23 0
-not 23 0 23 0
-pbranch 23 0 0 0
-branchz 0 0 0 4
-load 21 0 0 246
-load_hd 21 0 22 0
+load_hd 21 0 23 0
+setlt 0 23 25 0
+not 25 0 25 0
+pbranch 25 0 0 0
+branchz 0 0 0 10
+addi 21 0 21 2
+load_hd 21 0 23 0
+loadi 24 0 0 1
+setlt 24 23 25
+setlt 23 24 26
+or 25 26 25 0
+not 25 0 25 0
+pbranch 25 0 0 0
+branchz 0 0 0 1
 store 22 0 0 247
-jump 0 0 0 671
 load 21 0 0 246
 addi 21 0 21 32
-store 21 0 0 246
 jump 0 0 0 646
-store 0 0 0 247
 jumpr 27 0 0 0
-loadi 27 0 0 endgetindex?
-load 21 0 0 247
-store 21 0 0 248
-jump 0 0 0 676
-loadi 21 0 0 1
-store 21 0 0 249
-load 21 0 0 192
-store 21 0 0 250
-load 21 0 0 250
-setlt 21 0 22 0
-setlt 0 21 23 0
-or 22 23 22 0
-pbranch 22 0 0 0
-branchz 0 0 0 endwhile
-load
+loadi 27 0 0 get_memory_position_available?
+
+
 
 
 
