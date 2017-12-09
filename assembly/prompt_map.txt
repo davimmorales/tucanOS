@@ -412,11 +412,120 @@ compare: (is_list_running_available) == 0
     ---
     ---
     ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
     return running_process;
   }
+  load return [line 478]
+  call get_memory_position_available
+  function get_memory_position_available(){
+    int i = 0;
+    int position;
+    while(list_programs_info[i]!=0){
+      if (list_programs_info[i].id != 1) {
+        if (list_programs_info[i].state==1) {
+          if (list_programs_info[i].place==0) {
+            if(list_programs_info[i].index_process==1){
+              position = 2;
+              break;
+            }if(list_programs_info[i].index_process==2){
+              position = 1;
+              break;
+            }
+          }
+        }
+      }
+      i++;
+    }
+    return position;
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+  }
+update_memory_position.id = get_running_process.running_process
+---
+update_memory_position.new_index_process = get_memory_position_available.position_available
+---
+load return [line 529]
+call update_memory_position
+function update_memory_position(id, new_index_process){
+  i = 0;
+  former_index_process = 0;
+  new_index_process_aux;
+  while (list_programs_info[i]!=0) {
+    if(list_programs_info[i].id==id){
+      former_index_process = list_programs_info[i].index_process;
+      list_programs_info[i].index_process = new_index_process;
+      break;
+    }
+    i++;
+  }
 
-
-
+  i=0;
+  former_index_process = former_index_process*size_of_section;
+  new_index_process_aux = new_index_process*size_of_section;
+  while (i<size_of_section) {
+    running_processes[new_index_process_aux+i] = running_processes[former_index_process+i];
+    i++;
+  }
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
 
 function: update_program_info
 function: kill_process
