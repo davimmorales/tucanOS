@@ -420,14 +420,60 @@ load 21 0 0 246
 addi 21 0 21 32
 jump 0 0 0 646
 jumpr 27 0 0 0
-loadi 27 0 0 get_memory_position_available?
-
-
-
-
-
-
-
+loadi 27 0 0 732
+jump 0 0 0 679
+store 0 0 0 249
+loadi_hd 21 1 0 0
+store 21 0 0 248
+load 21 0 0 248
+load_hd 21 0 22 0
+setlt 0 22 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 43
+loadi 24 0 0 1
+setlt 24 22 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 36
+addi 21 0 21 3
+load_hd 21 0 23 0
+setlt 23 24 25 0
+setlt 24 23 24 0
+or 24 25 24 0
+not 24 0 24 0
+pbranch 24 0 0 0
+branchz 0 0 0 28
+subi 21 0 21 1
+load_hd 21 0 23 0
+setlt 0 23 23 0
+not 23 0 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 22
+loadi 24 0 0 1
+subi 21 0 21 1
+load_hd 21 0 23 0
+setlt 24 23 25 0
+setlt 23 24 24 0
+or 24 25 24 0
+not 24 25 24 0
+pbranch 24 0 0 0
+branchz 0 0 0 3
+loadi 24 0 0 2
+store 24 0 0 249
+jump 0 0 0 731
+loadi 24 0 0 2
+setlt 24 23 25
+setlt 23 24 24
+or 24 25 24 0
+not 24 0 24 0
+pbranch 24 0 0 0
+branchz 0 0 0 3
+loadi 24 0 0 1
+store 24 0 0 249
+jump 0 0 0 731
+load 21 0 0 248
+addi 21 0 21 12
+jump 0 0 0 682
+jumpr 27 0 0 0
 loadi 31 0 0 8500
 output 31 0 0 0
 jump 0 0 0 257
