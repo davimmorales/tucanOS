@@ -19,6 +19,3 @@ function update_memory_position(id, new_index_process){
     i++;
   }
 }
-
-5 id
-6 new_index_process

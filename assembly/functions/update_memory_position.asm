@@ -1,10 +1,7 @@
-
 loadi 21 0 0 4
 store 21 0 0 250
 loadi 21 0 0 1
 store 21 0 0 251
-
-
 loadi_hd 21 1 0 0
 store 21 0 0 252
 load 21 0 0 252
