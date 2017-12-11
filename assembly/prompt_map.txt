@@ -474,6 +474,10 @@ compare: (is_list_running_available) == 0
     ---
     ---
     ---
+    ---
+    ---
+    ---
+    ---
   }
 update_memory_position.id = get_running_process.running_process
 ---
@@ -525,6 +529,24 @@ function update_memory_position(id, new_index_process){
   ---
   ---
   ---
+}
+save_snapshot.id = get_running_process.id;
+--
+load return [line something?]
+call save_snapshot
+function save_snapshot(running_process){
+  i = 0;
+  while (list_programs_info[i]!=0) {
+    if (list_programs_info[i].id==running_process) {
+      break;
+    }
+    i++;
+  }
+  i = i+12;
+  HD[i] = R[0];
+  i++;
+  HD[i] = R[1];
+  ... HD[i] = R[19]
 }
 
 function: update_program_info
