@@ -305,7 +305,7 @@ loadi 21 0 0 64
 load 22 0 0 238
 times 21 22 21 0
 noo 0 0 0 0
-loadi_hd 22 2 0 0
+loadi_hd 22 3 0 0
 add 21 22 21 0
 store 21 0 0 240
 load 21 0 0 240
