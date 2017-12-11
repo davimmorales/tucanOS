@@ -483,8 +483,8 @@ load 21 0 0 247
 store 21 0 0 250
 load 21 0 0 249
 store 21 0 0 251
-loadi 27 0 0 784
-jump 0 0 0 739
+loadi 27 0 0 788
+jump 0 0 0 743
 loadi_hd 21 1 0 0
 store 21 0 0 252
 load 21 0 0 252
@@ -504,10 +504,10 @@ load_hd 21 0 23 0
 store 23 0 0 253
 load 23 0 0 251
 store_hd 21 0 23 0
-jump 0 0 0 762
+jump 0 0 0 766
 load 21 0 0 252
 addi 21 0 21 32
-jump 0 0 0 740
+jump 0 0 0 744
 load 22 0 0 253
 loadi 23 0 0 64
 times 22 23 22 0
@@ -528,7 +528,7 @@ load 24 0 0 254
 add 21 24 24 0
 storer 24 0 22 0
 addi 21 0 21 1
-jump 0 0 0 770
+jump 0 0 0 774
 jumpr 27 0 0 0
 
 loadi 31 0 0 8500
