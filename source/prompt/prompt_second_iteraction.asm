@@ -188,7 +188,7 @@ loadi 21 0 0 1
 store 21 0 0 224
 noo 0 0 0 0
 noo 0 0 0 0
-noo 0 0 0 0
+loadi 20 0 0 450
 noo 0 0 0 0
 noo 0 0 0 0
 jumpr 27 0 0 0
@@ -421,7 +421,7 @@ addi 21 0 21 32
 jump 0 0 0 646
 jumpr 27 0 0 0
 loadi 27 0 0 737
-jump 0 0 0 680
+output 20 0 0 0
 loadi 21 0 0 160
 loadi 22 0 0 170
 store 21 0 0 248
@@ -484,7 +484,7 @@ store 21 0 0 250
 load 21 0 0 249
 store 21 0 0 251
 loadi 27 0 0 788
-jump 0 0 0 743
+output 20 0 0 0
 loadi_hd 21 1 0 0
 store 21 0 0 252
 load 21 0 0 252
@@ -532,8 +532,8 @@ jump 0 0 0 774
 jumpr 27 0 0 0
 load 21 0 0 247
 store 21 0 0 255
-loadi 27 0 0 453
-jump 0 0 0 792
+loadi 27 0 0 452
+output 20 0 0 0
 loadi_hd 21 1 0 0
 store 21 0 0 256
 load 21 0 0 256

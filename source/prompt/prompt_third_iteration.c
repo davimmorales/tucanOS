@@ -597,13 +597,125 @@ compare: (select_file_menu_option) == 1
   ---
   ---
   }
-if(menu_0_option==4){
-  call list_waiting_processes
+if(menu_0_option<10){
+  call something
 }else{
-check_if_running.id = menu_0_option;
 ---
-load return [line get_index_process?]
-
+---
+selected_process = menu_0_option;
+check_if_running.id = menu_0_option;
+load return [line 635]
+call check_if_running
+funtion check_if_running(id){
+  i = 0;
+  is_running = 0;
+  while (list_running[i]!=0) {
+    if(list_running[i].id == id){
+      is_running = 1;
+      break;
+    }
+  }
+  return is_running;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+if(check_if_running.is_running==0){
+  call menu_0;
+}else{//menu_access_process
+  input(access_process_menu_option);
+  if (access_process_menu_option==0) {
+    output(selected_process);
+    call menu_access_process; [line 641]
+  }else if (access_process_menu_option==2) {
+    call menu_0; [line 257]
+  }else if(access_process_menu_option==3){
+    call kill_process;
+  }
+  else if(3<access_process_menu_option){
+    call menu_access_process; [line 641]
+  }
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  else if(access_process_menu_option==1){
+    get_index_process.id = selected_process;
+    ---
+    load return [line?];
+    call get_index_process;
+function get_index_process{
+  i = 0;
+  index_process;
+    while (list_programs_info[i]!=0) {
+      if (list_programs_info[i]!=1) {
+        if (list_programs_info[i].id == id) {
+          index_process = list_programs_info.index_process;
+          break;
+        }
+      }
+      i++;
+    }
+    return index_process;
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+}
+  }
 }
 
   function: update_program_info
