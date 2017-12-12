@@ -1,0 +1,34 @@
+loadi_hd 21 1 0 0
+store 21 0 0 246
+load 21 0 0 246
+load_hd 21 0 22 0
+setlt 22 0 23 0
+setlt 0 22 24 0
+or 23 24 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 25
+loadi 24 0 0 1
+setlt 22 24 25 0
+setlt 24 22 24 0
+or 24 25 24 0
+pbranch 24 0 0 0
+branchz 0 0 0 16
+addi 21 0 21 1
+load_hd 21 0 23 0
+setlt 0 23 25 0
+not 25 0 25 0
+pbranch 25 0 0 0
+branchz 0 0 0 10
+addi 21 0 21 2
+load_hd 21 0 23 0
+loadi 24 0 0 1
+setlt 24 23 25
+setlt 23 24 26
+or 25 26 25 0
+not 25 0 25 0
+pbranch 25 0 0 0
+branchz 0 0 0 1
+store 22 0 0 247
+load 21 0 0 246
+addi 21 0 21 12
+jump 0 0 0 3
