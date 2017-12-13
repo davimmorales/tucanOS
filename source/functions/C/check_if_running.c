@@ -6,6 +6,7 @@ funtion check_if_running(id){
       is_running = 1;
       break;
     }
+    i++;
   }
   return is_running;
 }
