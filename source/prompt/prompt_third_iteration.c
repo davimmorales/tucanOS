@@ -738,6 +738,78 @@ function get_index_process{
     ---
     load return [line 741]
     call save_snapshot;
+    resume_snapshot.id = selected_process.id;
+    ---
+    load return [line 812]
+    call resume_snapshot;
+function resume_snapshot(id){
+  i = 0;
+  while (list_programs_info[i]!=0) {
+    if (list_programs_info[i].id==id) {
+      break;
+    }
+    i++;
+  }
+  i = i+12;
+  R[0] = HD[i];
+  i++;
+  R[1] = HD[i];
+  ...   R[19] = HD[i];
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+    }
+    PC <= R[28]
   }
 }
 
