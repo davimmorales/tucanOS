@@ -680,7 +680,7 @@ if(check_if_running.is_running==0){
   else if(access_process_menu_option==1){
     get_index_process.id = selected_process;
     ---
-    load return [line?];
+    load return [line 718];
     call get_index_process;
 function get_index_process{
   i = 0;
@@ -715,6 +715,29 @@ function get_index_process{
     ---
     ---
 }
+    update_memory_position.id = selected_process;
+    ---
+    update_memory_position.new_index_process = 4;
+    ---
+    load return [line 724]
+    call update_memory_position;
+    load return [line 726]
+    call get_running_process;
+    update_memory_position.id = get_running_process.id;
+    ---
+    update_memory_position.new_index_process = get_index_process.index_process;
+    ---
+    load return [line 732]
+    call update_memory_position;
+    update_memory_position.id = selected_process;
+    ---
+    update_memory_position.new_index_process = 0;
+    load return [line 737]
+    call update_memory_position;
+    save_snapshot.id = get_running_process.id;
+    ---
+    load return [line 741]
+    call save_snapshot;
   }
 }
 
