@@ -341,7 +341,7 @@ function is_list_running_empty(){
   return from is_list_running_empty
 }
 if(is_list_running_empty==0)
-  jump [line 196]
+  jump [line 197]
 else
   jump [line 377]
   ---
@@ -375,7 +375,7 @@ compare: (select_file_menu_option) == 1
         ---
         ---
   load return [line 379]
-  call is_list_running_available
+  call is_list_running_available//line 405
   compare: (is_list_running_available) == 0
   false: update_index_process_HD
   true:
@@ -420,7 +420,7 @@ compare: (select_file_menu_option) == 1
     ---
     return running_process;
   }
-  load return [line 478]
+  load return [line 482]
   call get_memory_position_available
   function get_memory_position_available(){
     int i = 0;
@@ -483,7 +483,7 @@ compare: (select_file_menu_option) == 1
   ---
   update_memory_position.new_index_process = get_memory_position_available.position_available
   ---
-  load return [line 529]
+  load return [line 533]
   call update_memory_position
   function update_memory_position(id, new_index_process){
   i = 0;
