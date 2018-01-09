@@ -603,7 +603,7 @@ if(menu_0_option<10){
 ---
 ---
 selected_process = menu_0_option;
-check_if_running.id = menu_0_option;//store 21 0 0 257
+check_if_running.id = menu_0_option;
 load return [line 635]
 call check_if_running
 funtion check_if_running(id){

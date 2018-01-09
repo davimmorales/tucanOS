@@ -614,7 +614,7 @@ loadr 21 0 22 0
 setlt 0 22 23 0
 pbranch 23 0 0 0
 branchz 0 0 0 12
-load 23 0 0 0 260
+load 23 0 0 0 257
 setlt 22 23 24 0
 setlt 23 22 25 0
 or 24 25 24 0
