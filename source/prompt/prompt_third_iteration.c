@@ -639,10 +639,10 @@ if(check_if_running.is_running==0){
   if (access_process_menu_option==0) {
     output(selected_process);
     call menu_access_process; [line 641]
-  }else if (access_process_menu_option==2) {
+  }else if (access_process_menu_option==2) {//not 22 0 22 0
     call menu_0; [line 257]
   }else if(access_process_menu_option==3){
-    call kill_process;
+    call kill_process;//input 21
   }
   else if(3<access_process_menu_option){
     call menu_access_process; [line 641]
@@ -809,9 +809,18 @@ function resume_snapshot(id){
   ---
   ---
     }
+    load return [line ?]
+    get_index_hd.id = selected_process.id;
+    ---
+    call get_index_hd(id);
+    transfer_hd_to_iram.index_hd = get_index_hd.index_hd;
+    ---
+    load return [line ?]
+    call transfer_hd_to_iram
     PC <= R[28]
   }
 }
+
 
   function: update_program_info
   function: kill_process
