@@ -717,7 +717,7 @@ noo 0 0 0 0
 jumpr 27 0 0 0
 load 21 0 0 260
 store 21 0 0 250
-loadi 21 0 0 4
+loadi 21 0 0 3
 store 21 0 0 251
 loadi 27 0 0 979
 jump 0 0 0 743
@@ -817,6 +817,7 @@ load 21 0 0 242
 store 21 0 0 238
 loadi 27 0 0 1075
 jump 0 0 0 558
-jump 0 0 0 0
+jumpr 28 0 0 0
 noo 0 0 0 0
 halt 0 0 0 0
+add 0 0 0 0
