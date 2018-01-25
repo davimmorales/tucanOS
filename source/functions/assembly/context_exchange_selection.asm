@@ -1,8 +1,8 @@
 noo 0 0 0 0
 loadi 0 0 0 0
 load_wd 21 0 0 0
-store 21 0 0 5
-load 21 0 0 5
+store 21 0 0 270
+load 21 0 0 270
 setlt 0 21 22 0
 pbranch 22 0 0 0
 branchz 0 0 0 15
