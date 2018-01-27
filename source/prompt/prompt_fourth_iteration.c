@@ -837,10 +837,114 @@ function context_exchange_selection(output_watchdog){
     }else if (selector<6) {
       call treat_halt();
     }
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+  }
+}
+---
+---
+---
+---
+---
+load return [line 900]
+get_id_from_index_process.index_process = context_exchange_selection.selector;
+---
+call get_id_from_index_process/90;
+function get_id_from_index_process(index_process){
+  i = 0;
+  id = 0;
+  while (list_programs_info[i]!=0) {
+    if (list_programs_info[i]!=1) {
+      if (list_programs_info[i].state>0) {
+        if (list_programs_info[i].state<3) {
+          if (list_programs_info[i].index_process==index_process) {
+            id = list_programs_info[i].id;
+          }
+        }
+      }
+    }
+    i++;
+  }
+  return id;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+if(id==0)
+  return execution: jump r[28];
+  ---
+  ---
+  ---
+  ---
+  ---
+  else{
+    ---
+    ---
+    ---
+    get_state.id = get_id_from_index_process.id;
+    ---
+    load return [line 939]
+    call get_state();
+    function get_state(id){
+      id = id;
+      state = 0;
+      i = 0;
+      while (list_programs_info[i]!=0) {
+        if (list_programs_info[i].id==id) {
+          state = list_programs_info[i].state;
+        }
+        i++;
+      }
+      return state;
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+    }
+    if(get_state.state==2){
+      return execution: jump r[28];
+
+    }else{
+      
+    }
+
   }
 
-
-}
 
 
   function: update_program_info

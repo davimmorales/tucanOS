@@ -1,0 +1,29 @@
+noo 0 0 0 0
+loadi 0 0 0 0
+input 21 0 0 0
+store 21 0 0 275
+store 0 0 0 277
+loadi_hd 21 1 0 0
+store 21 0 0 276
+load 21 0 0 276
+load_hd 21 0 22 0
+setlt 0 22 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 13
+load 23 0 0 275
+setlt 22 23 24
+setlt 23 22 23
+or 23 24 23 0
+not 23 0 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 3
+addi 21 0 21 3
+load_hd 21 0 23 0
+store 23 0 0 277
+load 21 0 0 276
+addi 21 0 21 32
+jump 0 0 0 262
+load 18 0 0 277
+output 18 0 0 0
+halt 0 0 0 0
+add 0 0 0 0
