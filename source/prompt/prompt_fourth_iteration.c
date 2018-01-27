@@ -606,7 +606,7 @@ selected_process = menu_0_option;
 check_if_running.id = menu_0_option;//257
 load return [line 635]
 call check_if_running
-funtion check_if_running(id){
+function check_if_running(id){
   i = 0;
   is_running = 0;
   while (list_running[i]!=0) {
