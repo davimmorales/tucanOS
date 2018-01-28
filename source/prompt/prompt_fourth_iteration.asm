@@ -448,7 +448,7 @@ pbranch 24 0 0 0
 branchz 0 0 0 5
 subi 21 0 21 2
 load_hd 21 0 22 0
-loadi 24 0 0 6
+loadi 24 0 0 266
 add 22 24 22 0
 storer 22 0 23 0
 load 21 0 0 248
@@ -936,7 +936,20 @@ jump 0 0 0 1172
 noo 0 0 0 0
 noo 0 0 0 0
 jumpr 27 0 0 0
-
-
+noo 0 0 0 0
+noo 0 0 0 0
+load 21 0 0 277
+loadi 22 0 0 2
+setlt 21 22 23 0
+setlt 22 21 22 0
+or 22 23 22 0
+not 22 0 22 0
+pbranch 22 0 0 0
+branchz 0 0 0 1
+jumpr 28 0 0 0
+load 21 0 0 274
+store 21 0 0 261
+loadi 27 0 0 973
+jump 0 0 0 940
 halt 0 0 0 0
 add 0 0 0 0

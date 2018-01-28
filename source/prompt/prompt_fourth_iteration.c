@@ -423,25 +423,25 @@ compare: (select_file_menu_option) == 1
   load return [line 478]
   call get_memory_position_available
   function get_memory_position_available(){
-    int i = 0;
-    int position;
-    while(list_programs_info[i]!=0){
-      if (list_programs_info[i].id != 1) {
-        if (list_programs_info[i].state==1) {
-          if (list_programs_info[i].place==0) {
-            if(list_programs_info[i].index_process==1){
-              position = 2;
-              break;
-            }if(list_programs_info[i].index_process==2){
-              position = 1;
-              break;
-            }
+    i = 0;
+    position_available = 3;
+    array_memory_positions[3] = 0;
+      while (list_programs_info[i].id!=0) {
+        if (list_programs_info[i].id!=1) {
+          if (list_programs_info[i].state==1) {
+            array_memory_positions[list_programs_info[i].index_process] = 1;
           }
         }
-      }
-      i++;
+        i++;
     }
-    return position;
+
+    if (array_memory_positions[1]==0) {
+      position_available = 1;
+    }if(array_memory_positions[2]==0){
+      position_available = 2;
+    }
+
+    return position_available;
     ---
     ---
     ---
@@ -938,9 +938,19 @@ if(id==0)
     }
     if(get_state.state==2){
       return execution: jump r[28];
-
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
     }else{
-      
+      get_index_process.id = get_id_from_index_process.id;
+      load return [line 718]
+      call get_index_process();
     }
 
   }
