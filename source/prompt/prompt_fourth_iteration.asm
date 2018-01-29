@@ -949,6 +949,7 @@ branchz 0 0 0 1
 jumpr 28 0 0 0
 load 21 0 0 274
 store 21 0 0 261
+store 21 0 0 260
 loadi 27 0 0 973
 jump 0 0 0 940
 halt 0 0 0 0
