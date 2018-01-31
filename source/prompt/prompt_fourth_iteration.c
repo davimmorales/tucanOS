@@ -955,6 +955,14 @@ if(id==0)
 
   }
 
+  update_program_info.id = selected_file
+  ---
+  update_program_info.index_process = 0
+  update_program_info.place = 0
+  update_program_info.state = 1
+  ---
+  update_program_info.program_counter = 0
+
 
 
   function: update_program_info
