@@ -831,9 +831,9 @@ function context_exchange_selection(output_watchdog){
   selector = output_watchdog;
   if (selector>0) {
     if (selector<4) {
-      call context_exchange(selector);
+      call context_exchange(selector); [line 853]
     }else if (selector<5) {
-      call treat_waiting();
+      call treat_waiting(); [line 955]
     }else if (selector<6) {
       call treat_halt();
     }
@@ -952,8 +952,81 @@ if(id==0)
       load return [line 718]
       call get_index_process();
     }
-
+    ---
+    ---
+    ---
   }
+  call get_running_process(); [line 388]
+  ---
+  if (get_running_process.running_process==protagonist_program) {
+    return_to_execution; [line r[28]]
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+    ---
+  }else{
+    ---
+    ---
+    load return 983;
+    update_program_info.id = get_running_process.running_process;
+    ---
+    update_program_info.index_process = 0;
+    update_program_info.place = 0;
+    update_program_info.state = 2;
+    ---
+    update_program_info.program_counter = r[28];
+    call update_program_info; [line 206]
+    ---
+    ---
+    get_index_process.id = protagonist_program;
+    ---
+    get_index_process.id = protagonist_program;
+    selected_process = protagonist_program;
+    call get_index_process; //change context
+    ---
+    ---
+    ---
+  }
+  menu_0_option = menu_0_option (r[21]);
+  if (menu_0_option<4) {
+    ---
+    ---
+    ---
+    load return [line 1022];
+    call show_waiting_processes(); [line 1001]
+    function show_waiting_processes(){
+      i = 0;
+      while (list_programs_info[i]!=0) {
+        if (list_programs_info[i].state>=2) {
+          output(list_programs_info[i].id);
+        }
+        i++;
+      }
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+      ---
+    }
+    menu_0_option = 0;
+    jump menu_0 [line 0];
+  }else{
+    jump somewhere;
+    ---
+    ---
+  }
+
 
   update_program_info.id = selected_file
   ---
