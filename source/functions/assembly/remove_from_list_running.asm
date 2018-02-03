@@ -1,0 +1,21 @@
+noo 0 0 0 0
+loadi 0 0 0 0
+loadi 21 0 0 192
+store 21 0 0 4
+load 21 0 0 4
+loadr 21 0 22 0
+setlt 0 22 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 endwhile
+load 23 0 0 5
+setlt 22 23 24 0
+setlt 23 22 23 0
+or 23 24 23 0
+not 23 0 23 0
+pbranch 23 0 0 0
+branchz 0 0 0 endif
+loadi 23 0 0 1
+storer 21 0 23 0
+load 21 0 0 4
+addi 21 0 21 2
+jump 0 0 0 store 21 0 0 4

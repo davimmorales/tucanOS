@@ -1026,22 +1026,67 @@ if(id==0)
     ---
     ---
   }
-
-
-  update_program_info.id = selected_file
   ---
-  update_program_info.index_process = 0
-  update_program_info.place = 0
-  update_program_info.state = 1
   ---
-  update_program_info.program_counter = 0
-
-
-
-  function: update_program_info
-  function: kill_process
   ---
-  jump: menu_0 [line 1]
-  function: select_process
   ---
-  jump: menu_0 [line 1]
+load return [line 1035];
+call get_running_process(); [line 388]
+update_program_info.id = get_running_process.running_process;
+---
+update_program_info.index_process = 0;
+update_program_info.place = 0;
+update_program_info.state = 0;
+update_program_info.program_counter = 0;
+load return [line 1043];
+call update_program_info(); [line 206]
+---
+---
+---
+---
+load return [line 1073];
+remove_from_list_running.id = get_running_process.running_process;
+---
+call remove_from_list_running();
+function remove_from_list_running(id){
+  i = 0;
+  while (list_running!=0) {
+    if (list_running[i].id==id) {
+      list_running[i] = 1;
+    }
+    i++;
+  }
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+---
+---
+if(get_running_process.id!=protagonist_program){}
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  get_index_process.id = protagonist_program;
+  ---
+  selected_process = protagonist_program;
+  load return [line 990]
+  call get_index_process();
+  ---
+  ---
+  ---
+  ---
+  ---
+}else{call menu_0; [line 0]}
