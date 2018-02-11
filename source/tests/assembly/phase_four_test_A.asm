@@ -1,6 +1,6 @@
 noo 0 0 0 0
 loadi 0 0 0 0
-loadi 1 0 0 500000
+loadi 1 0 0 100000
 store 1 0 0 1
 loadi 1 0 0 50
 store 1 0 0 2
