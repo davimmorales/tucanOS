@@ -349,7 +349,7 @@ else
   ---
   ---
 compare: (select_file_menu_option) == 1
-  true: call is_list_running_empty [line 327]
+  true: running_empty [line 327]
   false:
   ---
   ---

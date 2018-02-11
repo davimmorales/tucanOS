@@ -304,7 +304,7 @@ store 0 0 0 239
 loadi 21 0 0 64
 load 22 0 0 238
 times 21 22 21 0
-noo 0 0 0 0
+load 30 0 0 234
 loadi_hd 22 2 0 0
 add 21 22 21 0
 store 21 0 0 240
@@ -680,8 +680,8 @@ branchz 0 0 0 1
 jump 0 0 0 901
 load 21 0 0 260
 store 21 0 0 261
-loadi 27 0 0 973
 store 21 0 0 271
+loadi 27 0 0 973
 loadi_hd 21 1 0 0
 store 21 0 0 262
 load 21 0 0 262
@@ -709,7 +709,7 @@ jump 0 0 0 967
 load 21 0 0 262
 addi 21 0 21 32
 jump 0 0 0 941
-noo 0 0 0 0
+load 30 0 0 261
 noo 0 0 0 0
 noo 0 0 0 0
 noo 0 0 0 0
@@ -947,7 +947,7 @@ not 22 0 22 0
 pbranch 22 0 0 0
 branchz 0 0 0 1
 jumpr 28 0 0 0
-load 21 0 0 271
+load 21 0 0 274
 store 21 0 0 261
 store 21 0 0 260
 loadi 27 0 0 973
