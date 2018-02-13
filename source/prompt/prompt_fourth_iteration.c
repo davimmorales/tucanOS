@@ -680,7 +680,7 @@ if(check_if_running.is_running==0){
   else if(access_process_menu_option==1){
     get_index_process.id = selected_process;
     ---
-    load return [line 718];
+    load return [line 1092];
     call get_index_process;/protagonist_program = selected_process
 function get_index_process{
   i = 0;
@@ -1088,5 +1088,12 @@ if(get_running_process.id!=protagonist_program){
   ---
   ---
   ---
+}else{jump [line 1100]}
+if(selected_process==running_program){
+  jumpr r[28];//  return to execution;
+}else{
+  jump [line 973];//procceed to change context
   ---
-}else{call menu_0; [line 0]}
+  ---
+}
+---
