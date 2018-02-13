@@ -1097,3 +1097,22 @@ if(selected_process==running_program){
   ---
 }
 ---
+---
+update_program_info.id = selected_process;
+---
+update_program_info.index_process = 0;
+update_program_info.place = 0;
+update_program_info.state = 0;
+update_program_info.program_counter = 0;
+load return [line 1110];
+call update_program_info(); [line 206]
+---
+---
+---
+remove_from_list_running.id = selected_process;
+---
+load return [line 1116];
+call remove_from_list_running();
+return menu_0 [line 0];
+---
+---
