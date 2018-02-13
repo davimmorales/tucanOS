@@ -509,7 +509,7 @@ load 21 0 0 252
 addi 21 0 21 32
 jump 0 0 0 744
 load 22 0 0 253
-loadi 23 0 0 48
+loadi 23 0 0 38
 times 22 23 22 0
 store 22 0 0 253
 load 22 0 0 251
@@ -717,7 +717,7 @@ noo 0 0 0 0
 jumpr 27 0 0 0
 load 21 0 0 260
 store 21 0 0 250
-loadi 21 0 0 3
+loadi 21 0 0 4
 store 21 0 0 251
 loadi 27 0 0 979
 jump 0 0 0 743
