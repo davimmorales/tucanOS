@@ -1072,7 +1072,7 @@ function remove_from_list_running(id){
 }
 ---
 ---
-if(get_running_process.id!=protagonist_program){}
+if(get_running_process.id!=protagonist_program){
   ---
   ---
   ---
