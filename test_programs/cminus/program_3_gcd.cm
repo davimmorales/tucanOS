@@ -1,0 +1,18 @@
+void main(void){
+	int na;
+	int nb;
+	na = input();
+	nb = input();
+	while(na!=nb){
+		if(na>=nb-1){
+			na = na - nb;
+		}
+		else{
+			nb = nb - na;
+		}
+	}
+	output(na);
+}
+
+
+
