@@ -301,7 +301,7 @@ load 21 0 0 242
 store 21 0 0 238
 loadi 27 0 0 581
 store 0 0 0 239
-loadi 21 0 0 64
+loadi 21 0 0 192
 load 22 0 0 238
 times 21 22 21 0
 noo 0 0 0 0
