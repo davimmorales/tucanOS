@@ -1,0 +1,7 @@
+array[1] 1
+array[2] 2
+array[3] 3
+size 4
+count 5
+result 6
+ct 7

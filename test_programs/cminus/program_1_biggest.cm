@@ -27,6 +27,6 @@ void main(void)
 	array[count] = input();
 	count = count + 1;
     }
-    	
+
     output(biggest(array,size));
 }
