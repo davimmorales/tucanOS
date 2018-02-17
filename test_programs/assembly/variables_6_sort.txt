@@ -1,0 +1,9 @@
+vetor [0] 0
+vetor [1] 1
+vetor [2] 2
+vetor [3] 3
+i 4
+j 5
+min 6
+aux 7
+tam 8

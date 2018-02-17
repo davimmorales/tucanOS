@@ -1,5 +1,6 @@
 noo 0 0 0 0
 loadi 0 0 0 0
+preio 0 0 0 0
 input 1 0 0 0
 store 1 0 0 2
 store 0 0 0 5
@@ -19,7 +20,7 @@ pbranch 4 0 0 0
 branchz 0 0 0 3
 load 8 0 0 3
 store 8 0 0 4
-jump 0 0 0 28
+jump 0 0 0 29
 load 8 0 0 5
 load 9 0 0 6
 add 8 9 8 0
@@ -28,7 +29,7 @@ store 9 0 0 5
 store 8 0 0 6
 load 2 0 0 3
 addi 2 0 2 1
-jump 0 0 0 11
+jump 0 0 0 12
 load 5 0 0 4
 preio 0 0 0 0
 output 5 0 0 0

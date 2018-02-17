@@ -28,6 +28,7 @@ jump 0 0 0 17
 load 14 0 0 7
 load 10 0 0 5
 over 14 10 13 0
+preio 0 0 0 0
 output 13 0 0 0
 halt 0 0 0 0
 add 0 0 0 0
