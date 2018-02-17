@@ -1,0 +1,6 @@
+arr 2
+arr 3
+arr 4
+size 5
+count 6
+result 7

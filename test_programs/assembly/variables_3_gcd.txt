@@ -1,0 +1,3 @@
+na 2
+nb 3
+counter 4

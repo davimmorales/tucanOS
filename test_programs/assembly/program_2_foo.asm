@@ -1,13 +1,13 @@
 noo 0 0 0 0
 loadi 0 0 0 0
 store 0 0 0 3
-input 11 0 0 0
+loadi 11 0 0 1
 store 11 0 0 4
 input 11 0 0 0
 store 11 0 0 1
-input 11 0 0 0
+loadi 11 0 0 3
 store 11 0 0 5
-input 11 0 0 0
+loadi 11 0 0 0
 store 11 0 0 6
 load 11 0 0 3
 store 11 0 0 3
@@ -24,7 +24,7 @@ load 14 0 0 1
 add 12 14 15 0
 store 15 0 0 3
 load 14 0 0 1
-setlt 14 13 15 0
+setlt 13 14 15 0
 pbranch 15 0 0 0
 branchz 0 0 0 5
 load 15 0 0 5
@@ -35,7 +35,7 @@ jump 0 0 0 37
 loadi 13 0 0 3
 times 11 13 14 0
 store 14 0 0 3
-loadi 13 0 0 4
+loadi 13 0 0 5
 load 12 0 0 6
 setlt 12 13 14 0
 pbranch 14 0 0 0
