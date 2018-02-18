@@ -1,0 +1,11 @@
+tests with automatic context exchange
+fibonacci: ok
+biggest: ok
+division: ok
+gcd: wrong, prints '1'
+mean: ok
+smallest: fixed
+sort: wrong for alternated (check with watchdog off)
+topdown: ok
+circle area: ok
+multiplication: ok

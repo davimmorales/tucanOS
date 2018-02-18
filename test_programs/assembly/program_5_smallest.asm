@@ -19,7 +19,7 @@ load 12 0 0 4
 load 11 0 0 7
 setlt 11 12 13 0
 pbranch 13 0 0 0
-branchz 0 0 0 10
+branchz 0 0 0 11
 load 13 0 0 6
 addi 11 0 14 1
 loadr 14 0 14 0
@@ -28,6 +28,7 @@ pbranch 15 0 0 0
 branchz 0 0 0 1
 store 14 0 0 6
 addi 11 0 11 1
+noo 0 0 0 0
 store 11 0 0 7
 jump 0 0 0 18
 load 5 0 0 6
