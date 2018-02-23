@@ -1233,7 +1233,8 @@ noo 0 0 0 0
 load 23 0 0 286
 load 22 0 0 289
 loadi_hd 21 1 0 0
-times 22 24 24 32
+loadi 24 0 0 32
+times 22 24 24 0
 add 21 24 21 0
 store_hd 21 0 23 0
 addi 21 0 21 5
