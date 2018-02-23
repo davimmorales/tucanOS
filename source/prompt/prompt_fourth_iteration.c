@@ -90,7 +90,7 @@ function: list_files
         ---
         ---
         ---
-        true: branch: create_file [line 0?]
+        true: branch: create_file [line 1177]
 false: function: select_file
 ---  routine: verify_if_running
     compare: (menu_1_option) == 0
@@ -1172,3 +1172,40 @@ function delete_file(id){
 ---
 ---
 return menu_1 [line 44];
+---
+---
+input(id);
+check_if_exists_list_programs_info.id = id;
+load return [line 1203];
+call check_if_exists_list_programs_info();
+function check_if_exists_list_programs_info(id){
+  i = 0;
+  while (list_programs_info[i]!=0) {
+    if (list_programs_info[i]==id) {
+      return 1;
+    }
+    i = i + 1
+  }
+  return 0;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+---
+---
+if(check_if_exists_list_programs_info.exists == 1){
+  return menu_1 [line 44];
+  ---
+  ---
+}else{
+
+
+}

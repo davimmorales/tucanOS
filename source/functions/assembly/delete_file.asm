@@ -1,7 +1,7 @@
 noo 0 0 0 0
 loadi 0 0 0 0
 load 23 0 0 285
-loadi 21 1 0 0
+loadi_hd 21 1 0 0
 load_hd 21 0 22 0
 setlt 22 23 24 0
 setlt 23 22 25 0
