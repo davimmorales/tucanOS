@@ -2,7 +2,7 @@ tests with automatic context exchange
 fibonacci: ok
 biggest: ok
 division: ok
-gcd: wrong, prints '1'
+Pow: ok
 mean: ok
 smallest: fixed
 sort: wrong for alternated (check with watchdog off)

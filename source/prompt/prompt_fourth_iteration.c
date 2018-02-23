@@ -1116,3 +1116,59 @@ call remove_from_list_running();
 return menu_0 [line 0];
 ---
 ---
+---
+input(new_id);
+update_program_id.new_id = new_id;
+update_program_id.previous_id = selected_file;
+---
+
+load return [line 1149];
+call update_program_id;
+update_program_id(previous_id, new_id){
+int i;
+i = 0;
+while (list_programs_info[i].id!=0) {
+  if (list_programs_info[i].id==previous_id) {
+    list_programs_info[i].id = new_id;
+    break;
+  }
+}
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+}
+---
+return (menu_1) [line 44]
+---
+---
+delete_file.id = selected_file;
+---
+load return [line 1172];
+call delete_file();
+function delete_file(id){
+  i = 0;
+  while (list_programs_info[i]!=id) {
+    i = i + 1;
+  }
+  list_programs_info[i] = 1;
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+---
+---
+return menu_1 [line 44];
