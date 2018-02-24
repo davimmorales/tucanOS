@@ -144,7 +144,7 @@ false: function: select_file
         ---
         ---
         true: jump: menu_1 [line 44]
-        false: jump verify_if_1
+        false: jump verify_if_1 [line 351]
 load return [line 582]
 ---
   function is_list_running_available;
@@ -1205,7 +1205,43 @@ if(check_if_exists_list_programs_info.exists == 1){
   return menu_1 [line 44];
   ---
   ---
+  ---
 }else{
+---
+---
+load return [line 1231];
+call get_hd_position_available();
+function get_hd_position_available(){
+  i = 0;
+  position_hd = 0;
+
+  while (list_programs_info[i].id!=0) {
+    if (list_programs_info[i].id==1) {
+      break;
+    }
+    i = i + 1;
+  }
+  position_hd = i;
+  ---
+  ---
+  ---
+  ---
+  ---
+}
+---
+---
+list_programs_info[32*position_available+start] = check_if_exists_list_programs_info.id;
+list_programs_info[32*position_available+start+5] = get_index_hd.position_available;
+---
+---
+---
+---
+---
+---
+---
+---
+---
+return menu_1 [line 44];
 
 
 }
