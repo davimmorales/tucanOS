@@ -1,1 +1,0 @@
-line 630, result of check_if_running

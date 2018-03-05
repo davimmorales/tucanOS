@@ -1,8 +1,0 @@
-450:
-341, is_list_running_empty
-451:
-379, before get_running_process
-452:
-424, before get_memory_position_available
-487, before update_memory_position
-536, before save_snapshot
